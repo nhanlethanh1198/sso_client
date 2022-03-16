@@ -10,7 +10,14 @@ import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
+import { useNavigate } from 'react-router-dom'
+
+
 export default function SignIn() {
+
+  const navigate = useNavigate();
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -19,6 +26,13 @@ export default function SignIn() {
       password: data.get("password"),
     });
   };
+
+  const navigateToHomePage = () => {
+    //  Gắn link để quay về trang chủ
+    // Dùng thư viện react-router-dom để gắn link 
+    navigate('/')
+    // '/' là trả về trang chủ
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -74,6 +88,10 @@ export default function SignIn() {
               <Link href="#" variant="body2">
                 Forgot password?
               </Link>
+              {/* Demo cái nút trước nhen */}
+              <Button onClick={navigateToHomePage} >Quay lại trang chủ</Button>
+             
+
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">

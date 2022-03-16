@@ -16,6 +16,7 @@ const Home = () => {
             justifyContent="center"
             alignItems="center"
           >
+            <Button onClick={() => console.log('Hello')}>Hello</Button>
             <Button variant="contained" onClick={() => navigate("/sign-in")}>
               Sign In
             </Button>

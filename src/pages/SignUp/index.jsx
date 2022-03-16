@@ -10,7 +10,15 @@ import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 
+import { useNavigate } from 'react-router-dom'
+
+
 export default function SignUp() {
+  const navigate = useNavigate();
+  const navigateToHomePage = () => {
+    navigate('/')
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -95,11 +103,13 @@ export default function SignUp() {
           >
             Sign Up
           </Button>
+          
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="#" variant="body2">
                 Already have an account? Sign in
               </Link>
+             <Button onClick={navigateToHomePage} >Quay lại trang chủ</Button>
             </Grid>
           </Grid>
         </Box>
