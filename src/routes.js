@@ -1,10 +1,10 @@
 import { useRoutes } from "react-router-dom";
 import NotFound from "./NotFound";
-
 // Pages
 import { Home } from "./pages/Home";
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
+import { SignIn } from './pages/SignIn';
+import { SignUp } from './pages/SignUp';
+
 
 export default function Router() {
   return useRoutes([
